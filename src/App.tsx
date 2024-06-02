@@ -1,20 +1,16 @@
-import { useState } from "react";
-import "./App.css";
+// src/App.tsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RestaurantListPage from "./pages/RestaurantListPage";
+import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <h1>Vite + React 5回目</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className="text-blue-600 font-bold text-5xl ">Hello Tailwind</p>
-      </div>
-    </>
-  );
-}
+const App: React.FC = () => (
+  <Router>
+    <Routes>
+      <Route path="/restaurant/:id" Component={RestaurantDetailPage} />
+      <Route path="/" Component={RestaurantListPage} />
+    </Routes>
+  </Router>
+);
 
 export default App;
