@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TodoList } from "./components/TodoList";
-import { dummyTodoList } from "./data/dummyTodoList";
 import { AddTodoForm } from "./components/AddTodoForm";
+import { dummyTodoList } from "./data/dummyTodoList";
 
 function App() {
   const [todoList, setTodoList] = useState(dummyTodoList);
@@ -54,7 +54,7 @@ function App() {
     <main className="mx-auto mt-10 max-w-xl space-y-10">
       <h1 className="text-center text-4xl">Todoアプリ</h1>
       <div className="space-y-5">
-        <AddTodoForm />
+        <AddTodoForm addTodo={addTodo} />
         <div className="rounded bg-slate-200 p-5">
           <TodoList
             todoList={todoList}
