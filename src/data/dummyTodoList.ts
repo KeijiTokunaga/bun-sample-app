@@ -3,17 +3,17 @@ import { Todo } from "../types/todo";
 export const dummyTodoList: Todo[] = [
   {
     id: 1,
-    title: "Reactを勉強する",
+    title: "あやちゃんに何か作ってもらう",
     completed: false,
   },
   {
     id: 2,
-    title: "夕食を作る",
+    title: "坂上にいく",
     completed: false,
   },
   {
     id: 3,
-    title: "部屋を掃除する",
+    title: "焼肉にいく",
     completed: true,
   },
 ];
