@@ -1,16 +1,18 @@
-// src/App.tsx
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import RestaurantListPage from "./pages/RestaurantListPage";
-import RestaurantDetailPage from "./pages/RestaurantDetailPage";
+import { dummyTodoList } from "./data/dummyTodoList";
 
-const App: React.FC = () => (
-  <Router>
-    <Routes>
-      <Route path="/restaurant/:id" Component={RestaurantDetailPage} />
-      <Route path="/" Component={RestaurantListPage} />
-    </Routes>
-  </Router>
-);
+function App() {
+  return (
+    <main className="mx-auto mt-10 max-w-xl space-y-10">
+      <h1 className="text-center text-4xl">Todoアプリ</h1>
+      <div className="rounded bg-slate-200 p-5">
+        <div className="space-y-3">
+          {dummyTodoList.map((todo) => (
+            <p key={todo.id}>{todo.title}</p>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
 
 export default App;
