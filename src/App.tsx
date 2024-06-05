@@ -25,6 +25,21 @@ function App() {
     });
   };
 
+  // Todoを追加
+  const addTodo = (title: string) => {
+    setTodoList((prevTodoList) => {
+      // 新しいTodoを作成
+      const newTodo = {
+        id: Date.now(),
+        title,
+        completed: false,
+      };
+
+      // 変更前のTodoリストと合わせる
+      return [newTodo, ...prevTodoList];
+    });
+  };
+
   return (
     <main className="mx-auto mt-10 max-w-xl space-y-10">
       <h1 className="text-center text-4xl">Todoアプリ</h1>
